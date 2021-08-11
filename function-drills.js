@@ -249,18 +249,27 @@ let sampleArray2 = [9, 8, 7, 6, 5, 4, 3, 2, 1, 0]
 
 //CODE HERE
 
-function determineOrder(arr) {
-    for (let i = 0; i < arr.length; i++){
-        if (arr[i]<i+1) {
-            return true
-        } else {
-            return false
-        }
-    }
-};    
+let isDescending = true;
+let isAscending = true;
 
-let isArrayAscending = determineOrder(sampleArray);
-console.log(isArrayAscending);
+function checkOrder(arr) {
+  for (var i = 0, l=arr.length-1; i<l; i++) {
+   isDescending = isDescending && (arr[i] > arr[i+1]);
+   isAscending = isAscending && (arr[i] < arr[i+1]);
+}
+
+if (isAscending) {
+  return true
+} else if (isDescending)  {
+  return false
+} else {
+  return false
+}
+
+}
+
+let arrayIsAscending = checkOrder(sampleArray)
+console.log(arrayIsAscending)
 
 
 ////////////////// PROBLEM 15 ////////////////////
