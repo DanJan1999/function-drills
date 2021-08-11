@@ -241,35 +241,51 @@ console.log(totalFrogs);
 //No Bug for me! I used Math.floor to avoid this the first time.
 
 ////////////////// PROBLEM 14 ////////////////////
-let sampleArray = [0,1,2,3,4,7,5,6,8,9];
 let sampleArray2 = [9, 8, 7, 6, 5, 4, 3, 2, 1, 0]
 /*
-  Write a function that takes in an array of numbers as an argument. In the body of the function, write logic to determine if the array is in ascending order. The function should return true, if it is sorted in ascending order, false if it is not. Create a variable, `arrayIsAscending` and set it equal to your function invoked. Use the sample array to test this function.
+Write a function that takes in an array of numbers as an argument. In the body of the function, write logic to determine if the array is in ascending order. The function should return true, if it is sorted in ascending order, false if it is not. Create a variable, `arrayIsAscending` and set it equal to your function invoked. Use the sample array to test this function.
 */
 
 //CODE HERE
 
-let isDescending = true;
-let isAscending = true;
+// let isDescending = true;
+// let isAscending = true;
 
+// function checkOrder(arr) {
+  //   for (var i = 0, l=arr.length-1; i<l; i++) {
+    //    isDescending = isDescending && (arr[i] > arr[i+1]);
+    //    isAscending = isAscending && (arr[i] < arr[i+1]);
+    // }
+    
+    // if (isAscending) {
+      //   return true
+      // } else if (isDescending) {
+        //   return false
+        // } else {
+          //   return false
+          // }
+          
+          // };
+          
+          // let arrayIsAscending = checkOrder(sampleArray);
+          // console.log(arrayIsAscending);
+          
+          let sampleArray = [0,1,2,3,4,7,5,6,8,9];
 function checkOrder(arr) {
-  for (var i = 0, l=arr.length-1; i<l; i++) {
-   isDescending = isDescending && (arr[i] > arr[i+1]);
-   isAscending = isAscending && (arr[i] < arr[i+1]);
-}
+  let answer
+  for (i = 0; i < arr.length - 1; i++) {
+    if(arr[i] < arr[i+1]) {
+      answer = true
+    } else {
+      answer = false
+      return answer
+    }
+  }
+  return answer
+};
 
-if (isAscending) {
-  return true
-} else if (isDescending)  {
-  return false
-} else {
-  return false
-}
-
-}
-
-let arrayIsAscending = checkOrder(sampleArray)
-console.log(arrayIsAscending)
+let arrayIsAscending = checkOrder(sampleArray);
+console.log(arrayIsAscending);
 
 
 ////////////////// PROBLEM 15 ////////////////////
